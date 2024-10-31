@@ -41,8 +41,28 @@ img{
     gap: var(--default-padding);
 }
 
+.mainNav_menu svg, .topnav_menu svg{
+    vertical-align: bottom;
+}
+
 .perfil{
     margin-right: var(--default-padding);
+    display: flex;
+    height: 100%;
+    align-items: center;
+    
+}
+
+.perfil_thumb{
+    margin-right: calc(var(--default-padding)/2);
+    box-sizing: border-box;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    height: 100%;
+}
+
+.perfil_thumb img{
+    height: 100%; 
 }
 
 .perfil_name{
