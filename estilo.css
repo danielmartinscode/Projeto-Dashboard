@@ -1,7 +1,8 @@
 :root{
     --primary-color: #004EDA;
-    --gray: #D3D3D3;
+    --grey: #f2f2f8;
     --default-padding: 2rem;
+    --middle-padding: calc(var(--default-padding)/2);
     --black: #111;
 }
 
@@ -25,6 +26,9 @@ img{
     grid-row: 1 / -1;
     display: flex;
     flex-direction: column;
+    max-height: 100vh;
+    position: sticky;
+    top: 0;
 }
 
 .topnav{
@@ -54,7 +58,7 @@ img{
 }
 
 .perfil_thumb{
-    margin-right: calc(var(--default-padding)/2);
+    margin-right: var();
     box-sizing: border-box;
     padding-top: .5rem;
     padding-bottom: .5rem;
@@ -76,9 +80,14 @@ img{
 }
 
 main{
-    background-color: #eee;
+    background-color: var(--grey);
     grid-column: 2 / -1;
     grid-row: 2 / -1;
+    display: grid;
+    gap: var(--default-padding);
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: min-content;
+    padding: var(--default-padding);
 }
 
 .mainNav_linkLogo{
@@ -111,9 +120,67 @@ main{
     padding-top: var(--default-padding);
 }
 
+.mainNav_menus li{
+    margin-top: 1rem;
+}
+
 .mainNav_menu:last-child{
     padding-bottom: var(--default-padding);
 }
+
+main > figure{
+    margin: 0;
+}
+
+
+main > *{
+    grid-column: span 2;
+}
+
+main>.grid-half{
+    grid-column: span 1;
+}
+
+.summary{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--middle-padding) var(--default-padding);
+    border-radius: 4px;
+}
+.summary article{
+    padding: var(--middle-padding) 0
+}
+
+.summary .number{
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-left: var(--middle-padding);
+}
+
+.separated{
+    width: 2px;
+    background-color: var(--grey);
+    align-self: stretch;
+}
+
+.btn{
+    background-color: var(--primary-color);
+    color: white;
+    padding: calc(var(--middle-padding) /2) var(--default-padding);
+    border-radius: 4px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+
+}
+
+.summary .btn{
+    align-self: stretch;
+}
+
 
 
 
